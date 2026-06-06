@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# Personal data — never committed to the public code repo.
+# The processed dataset lives in a separate PRIVATE repo and is pulled at
+# deploy time by scripts/get_data.py. Locally these files exist but are ignored.
+data/raw/
+data/processed/*.csv
+data/processed/*.npz
+*.zip
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Notes
+.env

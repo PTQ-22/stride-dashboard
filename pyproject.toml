@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stride-dashboard"
+version = "0.1.0"
+description = "Interactive Garmin running analytics dashboard built with Dash"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "dash>=3.0",
+    "dash-bootstrap-components>=2.0",
+    "plotly>=6.0",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+prod = ["gunicorn>=21.0"]
+# `etl` deps are only needed to regenerate processed data from a raw export,
+# not to run the dashboard.
+etl = ["fitparse>=1.2", "staticmap>=0.5.5", "Pillow>=10.0"]
+dev = ["pytest>=8.0", "fitparse>=1.2", "staticmap>=0.5.5", "Pillow>=10.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

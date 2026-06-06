@@ -1,0 +1,19 @@
+# Render.com blueprint — one-click deploy of the Stride dashboard.
+services:
+  - type: web
+    name: stride-dashboard
+    runtime: python
+    plan: free
+    # Build installs deps, then pulls the private dataset (needs DATA_TOKEN).
+    buildCommand: "pip install -r requirements.txt && pip install -e . && python scripts/get_data.py"
+    startCommand: "gunicorn wsgi:server --bind 0.0.0.0:$PORT --workers 1 --timeout 120"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: STRIDE_DEBUG
+        value: "false"
+      # Set these in the Render dashboard (Environment tab) — never commit them:
+      - key: DATA_REPO          # e.g. PTQ-22/stride-data
+        sync: false
+      - key: DATA_TOKEN         # GitHub PAT with read access to the data repo
+        sync: false

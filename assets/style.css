@@ -1,0 +1,232 @@
+/* =========================================================================
+   Stride — custom theme layered on top of Bootswatch "Darkly".
+   Palette: charcoal surfaces + warm "track orange" accent.
+   ========================================================================= */
+
+:root {
+  --bg: #12141a;
+  --surface: #1b1e27;
+  --surface-alt: #232734;
+  --grid: #2c3140;
+  --text: #e8e6e1;
+  --muted: #8b91a3;
+  --accent: #ff6b35;
+  --accent-soft: #ffb38a;
+  --secondary: #4cc9f0;
+  --radius: 14px;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle vignette so the dark bg feels intentional, not flat */
+.app-root {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(255, 107, 53, 0.08), transparent 60%),
+    var(--bg);
+}
+
+/* ---------- Navbar / brand ---------- */
+.app-navbar {
+  background: rgba(18, 20, 26, 0.85) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--grid);
+  padding: 0.55rem 0;
+}
+.navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand-link { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.brand-logo { width: 38px; height: 38px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name {
+  font-size: 1.3rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em;
+}
+.brand-tagline { font-size: 0.72rem; color: var(--muted); }
+.dataset-badge {
+  background: var(--surface-alt) !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--grid);
+  font-weight: 500; font-size: 0.78rem; padding: 0.5rem 0.8rem; border-radius: 999px;
+}
+
+/* ---------- Body grid: sidebar + content ---------- */
+.app-body { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem; }
+.sidebar { width: 270px; flex: 0 0 270px; position: sticky; top: 1.25rem; }
+.content { flex: 1 1 auto; min-width: 0; }
+
+@media (max-width: 991px) {
+  .app-body { flex-direction: column; }
+  .sidebar { width: 100%; flex-basis: auto; position: static; }
+}
+
+/* ---------- Control panel ---------- */
+.controls-card {
+  background: var(--surface); border: 1px solid var(--grid);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.controls-heading {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin-bottom: 1rem; font-weight: 600;
+}
+.control-label {
+  display: block; font-size: 0.8rem; color: var(--muted);
+  margin-bottom: 0.4rem; font-weight: 500;
+}
+.control-checklist .form-check { margin-bottom: 0.35rem; }
+.sport-option { display: inline-flex; align-items: center; }
+.legend-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  margin-right: 0.5rem;
+}
+/* Date-range month slider (replaces the un-themeable calendar) */
+.date-range-label {
+  font-size: 0.92rem; font-weight: 600; color: var(--text);
+  margin-bottom: 0.55rem; font-variant-numeric: tabular-nums;
+}
+.date-slider { padding-bottom: 0.25rem; }
+.rc-slider-tooltip-inner {
+  background: var(--surface-alt) !important; color: var(--text) !important;
+  border-radius: 6px; box-shadow: var(--shadow);
+}
+.form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+.rc-slider-track { background-color: var(--accent) !important; }
+.rc-slider-handle { border-color: var(--accent) !important; background: var(--accent) !important; }
+.rc-slider-rail { background-color: var(--grid) !important; }
+
+/* ---------- Tabs ---------- */
+.nav-tabs { border-bottom: 1px solid var(--grid); gap: 0.25rem; }
+.nav-tabs .nav-link {
+  color: var(--muted); border: none; font-weight: 500; padding: 0.6rem 1.1rem;
+  border-radius: 10px 10px 0 0;
+}
+.nav-tabs .nav-link:hover { color: var(--text); background: rgba(255, 255, 255, 0.03); }
+.nav-tabs .nav-link.active {
+  color: var(--accent) !important; background: transparent !important;
+  border-bottom: 2px solid var(--accent);
+}
+.tab-body { padding: 1.25rem 0 2rem; }
+
+/* ---------- Panels ---------- */
+.panel {
+  background: var(--surface); border: 1px solid var(--grid);
+  border-radius: var(--radius); box-shadow: var(--shadow); height: 100%;
+  transition: border-color 0.2s ease;
+}
+.panel:hover { border-color: #39414f; }
+.panel-header {
+  background: transparent; border-bottom: 1px solid var(--grid);
+  display: flex; align-items: baseline; gap: 0.6rem; padding: 0.85rem 1.1rem;
+}
+.panel-title { font-weight: 600; font-size: 0.98rem; color: var(--text); }
+.panel-subtitle { font-size: 0.76rem; color: var(--muted); }
+.panel-body { padding: 0.6rem 0.9rem 0.9rem; }
+
+/* ---------- KPI cards ---------- */
+.kpi-card {
+  background: linear-gradient(160deg, var(--surface-alt), var(--surface));
+  border: 1px solid var(--grid); border-radius: var(--radius);
+  text-align: center; box-shadow: var(--shadow); transition: transform 0.15s ease;
+}
+.kpi-card:hover { transform: translateY(-2px); }
+.kpi-icon { font-size: 1.25rem; color: var(--accent); }
+.kpi-value {
+  font-size: 1.55rem; font-weight: 700; color: var(--text);
+  margin-top: 0.2rem; font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+}
+.kpi-label {
+  font-size: 0.72rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- 3-D route panel ---------- */
+.route3d-header { justify-content: space-between; align-items: center; }
+.route3d-header .panel-subtitle { margin-left: 0.5rem; }
+.route3d-controls {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.8rem; color: var(--muted);
+}
+.route3d-colorby { display: inline-flex; gap: 0.9rem; }
+.route3d-colorby .form-check { margin: 0; padding-left: 1.5rem; }
+.route3d-colorby .form-check-label { font-size: 0.82rem; color: var(--text); }
+
+/* ---------- Map tab ---------- */
+.map-caption {
+  color: var(--muted); font-size: 0.85rem; margin-top: 0.6rem; max-width: 70ch;
+}
+
+/* ---------- Detail panel ---------- */
+.detail-panel { min-height: 480px; }
+.detail-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; color: var(--muted); padding: 3rem 1rem; height: 100%;
+}
+.detail-hint-icon { font-size: 2rem; color: var(--grid); margin-bottom: 0.75rem; }
+.detail-head { margin-bottom: 0.9rem; }
+.detail-badge {
+  display: inline-block; background: rgba(255, 107, 53, 0.16); color: var(--accent);
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 0.18rem 0.55rem; border-radius: 6px;
+}
+.detail-title { font-size: 1.15rem; font-weight: 700; margin: 0.45rem 0 0.15rem; }
+.detail-date, .detail-location { display: block; font-size: 0.8rem; color: var(--muted); }
+.detail-stats {
+  display: grid; grid-template-columns: 1fr; gap: 0; margin: 0.9rem 0;
+}
+.stat-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--grid);
+}
+.stat-label { color: var(--muted); font-size: 0.85rem; }
+.stat-value { font-weight: 600; font-variant-numeric: tabular-nums; }
+.detail-section-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin: 0.6rem 0 0.2rem;
+}
+
+/* ---------- About / Help ---------- */
+.help-item { display: flex; gap: 0.9rem; margin-bottom: 1.1rem; }
+.help-icon { font-size: 1.25rem; color: var(--accent); margin-top: 0.15rem; }
+.help-text p { margin: 0.1rem 0 0; color: var(--muted); font-size: 0.9rem; }
+.about-footer {
+  text-align: center; color: var(--muted); font-size: 0.8rem;
+  margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--grid);
+}
+.about-footer a { color: var(--accent); text-decoration: none; }
+
+/* ---------- DataTable polish ---------- */
+.dash-table-container input { background: var(--surface-alt) !important; color: var(--text) !important; }
+.dash-spreadsheet-container .dash-spreadsheet-inner td.focused { outline: 1px solid var(--accent) !important; }
+/* pagination footer */
+.dash-table-container .dash-spreadsheet-menu,
+.dash-table-container .previous-next-container {
+  background: transparent;
+}
+.dash-table-container .page-number, .dash-table-container .current-page,
+.dash-table-container .last-page, .dash-table-container .column-actions {
+  color: var(--muted) !important;
+}
+.dash-table-container .previous-next-container button {
+  background: var(--surface-alt) !important; color: var(--text) !important;
+  border: 1px solid var(--grid) !important; border-radius: 7px !important;
+  margin: 0 2px; min-width: 30px; height: 30px;
+}
+.dash-table-container .previous-next-container button:hover {
+  border-color: var(--accent) !important; color: var(--accent) !important;
+}
+.dash-table-container .previous-next-container input.current-page {
+  background: var(--surface-alt) !important; color: var(--text) !important;
+  border: 1px solid var(--grid) !important; border-radius: 7px !important;
+}
+/* dim the per-column native "filter data..." row */
+.dash-filter input::placeholder { color: var(--muted) !important; opacity: 0.6; }
+
+/* scrollbars */
+::-webkit-scrollbar { height: 9px; width: 9px; }
+::-webkit-scrollbar-thumb { background: var(--grid); border-radius: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
