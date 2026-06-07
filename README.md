@@ -6,11 +6,9 @@
 
 An interactive dashboard that turns a personal **Garmin Connect** data export
 into a story about training volume, pace progression, cardiovascular fitness
-and running form. Built with **Dash + Plotly** for a *Data Visualization*
-course assignment.
+and running form. Built with **Dash + Plotly**.
 
 > **Live demo:** [https://stride-dashboard.onrender.com/](https://stride-dashboard.onrender.com/)
-> **Repository:** _add your GitHub URL here_
 
 ---
 
@@ -48,10 +46,9 @@ A pen-and-paper wireframe of the layout was created before implementation:
 
 ## Why this dashboard
 
-The dataset is real: **711 activities recorded between December 2019 and June
+Personal dataset: **711 activities recorded between December 2019 and June
 2026** (636 runs, plus rides, walks and one mountaineering outing) exported
-from the author's own Garmin account. That makes the analysis personal and
-longitudinal rather than a generic BI template.
+from Garmin account.
 
 ### Tasks it supports
 1. See how weekly / monthly training volume evolves over years.
@@ -63,21 +60,7 @@ longitudinal rather than a generic BI template.
 
 ---
 
-## Features (assignment checklist)
 
-| Requirement | Where |
-|---|---|
-| Logo / monogram | `assets/logo.svg`, shown in the navbar |
-| Clean custom theme / CSS | `assets/style.css` (charcoal + "track orange") |
-| About / Help section | **About** tab |
-| ≥ 6 interactive viz components | volume, cumulative distance, mix donut, calendar heatmap, pace-by-year box, aerobic-efficiency trend, VO₂max, cadence form, HR-zone bar, pace-vs-distance scatter, GPS route-coverage map, 3-D elevation route — **12** |
-| Every component reacts to a control | global filter panel (date, sport, distance, granularity) |
-| ≥ 1 datatable | **Explorer** tab activities table (sortable, searchable, paginated) |
-| Select-in-one-updates-another | select a table row **or** click a scatter point → run-detail panel (incl. a 3-D elevation profile) **and** the map highlight update — across tabs |
-| Tabs / pills / multi-page | `Overview · Explorer · Map · Performance · About` |
-| Dynamic (uses a server) | Dash/Flask app with callbacks, served via gunicorn |
-
----
 
 ## Architecture
 
