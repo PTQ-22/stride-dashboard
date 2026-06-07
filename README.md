@@ -9,7 +9,7 @@ into a story about training volume, pace progression, cardiovascular fitness
 and running form. Built with **Dash + Plotly** for a *Data Visualization*
 course assignment.
 
-> **Live demo:** _add your Render/Railway URL here after deploying_
+> **Live demo:** [https://stride-dashboard.onrender.com/](https://stride-dashboard.onrender.com/)
 > **Repository:** _add your GitHub URL here_
 
 ---
@@ -40,9 +40,9 @@ by pace).
 > bundled in `data/processed/basemaps.npz` (711 tiles, ~7 MB) — the live app
 > makes zero map-tile network calls.
 
-A pen-and-paper wireframe of the layout lives in
-[`screenshots/sketch.md`](screenshots/sketch.md) (replace with a photo of your
-hand-drawn sketch before submitting).
+A pen-and-paper wireframe of the layout was created before implementation:
+
+![Dashboard Sketch](screenshots/sketch.jpg)
 
 ---
 
