@@ -161,6 +161,14 @@ Export Your Data*, then run `prepare_data.py`, `extract_tracks.py` and
 
 ---
 
+## Acknowledgements
+
+AI assistance (Claude) was used for parts of the data analysis and as a
+programming aid during development. Some values on the maps (e.g. a few derived
+coordinates) are approximate / computed rather than measured.
+
+---
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
