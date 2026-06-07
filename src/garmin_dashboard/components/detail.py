@@ -41,12 +41,8 @@ def detail_placeholder() -> html.Div:
     )
 
 
-def run_detail(run: pd.Series | None, tracks: pd.DataFrame | None = None) -> html.Div:
-    """Render the detail card for a selected activity (or a hint if none).
-
-    When GPS+elevation track data is available for the activity, a rotatable
-    3-D elevation profile of the route is appended.
-    """
+def run_detail(run: pd.Series | None) -> html.Div:
+    """Render the detail card for a selected activity (or a hint if none)."""
     if run is None:
         return detail_placeholder()
 

@@ -51,7 +51,6 @@ def route_3d(track: pd.DataFrame, color_by: str = "alt", name: str = "") -> go.F
         go.Scatter3d(
             x=track["lng"], y=track["lat"], z=alt,
             mode="lines+markers",
-            # continuous line coloured by the metric (no distracting white links)
             line=dict(color=cvals, colorscale=scale, reversescale=reverse,
                       width=6, cmin=cmin, cmax=cmax),
             marker=dict(
@@ -103,7 +102,6 @@ def route_3d(track: pd.DataFrame, color_by: str = "alt", name: str = "") -> go.F
         hoverinfo="skip", showlegend=False, name="footprint",
     ))
 
-    # clear Start / Finish markers on the elevation route
     s, e = track.iloc[0], track.iloc[-1]
     az = alt.to_numpy()
     fig.add_trace(go.Scatter3d(

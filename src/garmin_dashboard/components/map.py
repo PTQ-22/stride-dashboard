@@ -76,8 +76,6 @@ def route_map(
         )
     )
 
-    # default camera = home-training area (not the global bounds, which include
-    # far-away travel runs)
     center, zoom = FOCUS_CENTER, FOCUS_ZOOM
 
     if selected_id is not None:

@@ -78,7 +78,7 @@ def render_explorer(sports, date_idx, distance, selected_id):
     selected_run = T.get_activity(df, selected_id) if selected_id is not None else None
     return (
         charts.pace_vs_distance_scatter(runs, selected_id),
-        run_detail(selected_run, get_tracks()),
+        run_detail(selected_run),
     )
 
 

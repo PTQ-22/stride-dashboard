@@ -9,10 +9,8 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 
-from ..data.transform import format_pace
 from ..theme import COLORS, SEQUENTIAL, SPORT_COLORS, apply_theme, empty_figure
 
 
