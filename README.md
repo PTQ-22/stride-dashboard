@@ -1,7 +1,6 @@
 <div align="center">
   <img src="assets/logo.svg" width="72" alt="Stride logo"/>
   <h1>Stride · Running Analytics</h1>
-  <p><em>Six years on foot, one dashboard.</em></p>
 </div>
 
 An interactive dashboard that turns a personal **Garmin Connect** data export
@@ -29,8 +28,7 @@ a run highlights its route.
 3-D profile (longitude × latitude × elevation), floating above a real
 (pre-fetched, grayscale OpenStreetMap) basemap floor for orientation. The line
 colour encodes a metric you choose — elevation, pace or heart rate — so a single
-run becomes a rich story (here a half-marathon over the Poznań streets, coloured
-by pace).
+run becomes a rich story.
 
 ![3-D route](screenshots/route3d_alt.png)
 
@@ -47,7 +45,7 @@ A pen-and-paper wireframe of the layout was created before implementation:
 ## Why this dashboard
 
 Personal dataset: **711 activities recorded between December 2019 and June
-2026** (636 runs, plus rides, walks and one mountaineering outing) exported
+2026** (636 runs, plus rides and walks) exported
 from Garmin account.
 
 ### Tasks it supports
